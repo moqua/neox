@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/htmlunit/!svn/ver/5951/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/util
+END
+URLCreator.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/htmlunit/!svn/ver/5842/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/util/URLCreator.java
+END
+EncodingSniffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svnroot/htmlunit/!svn/ver/5726/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/util/EncodingSniffer.java
+END
+UrlUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/htmlunit/!svn/ver/5644/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/util/UrlUtils.java
+END
+StringUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svnroot/htmlunit/!svn/ver/5724/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/util/StringUtils.java
+END
+Cookie.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/htmlunit/!svn/ver/5724/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/util/Cookie.java
+END
+DebuggingWebConnection.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svnroot/htmlunit/!svn/ver/5940/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/util/DebuggingWebConnection.java
+END
+FalsifyingWebConnection.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svnroot/htmlunit/!svn/ver/5679/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/util/FalsifyingWebConnection.java
+END
+NameValuePair.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svnroot/htmlunit/!svn/ver/5724/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/util/NameValuePair.java
+END
+WebClientUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svnroot/htmlunit/!svn/ver/5658/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/util/WebClientUtils.java
+END
+WebResponseWrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svnroot/htmlunit/!svn/ver/5951/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/util/WebResponseWrapper.java
+END
+KeyDataPair.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svnroot/htmlunit/!svn/ver/5301/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/util/KeyDataPair.java
+END
+MapWrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/htmlunit/!svn/ver/5301/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/util/MapWrapper.java
+END
+WebConnectionWrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svnroot/htmlunit/!svn/ver/5660/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/util/WebConnectionWrapper.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/htmlunit/!svn/ver/1982/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/util/package.html
+END

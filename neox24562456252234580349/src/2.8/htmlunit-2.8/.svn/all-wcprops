@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svnroot/htmlunit/!svn/ver/5956/trunk/htmlunit
+END
+LICENSE.txt
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/htmlunit/!svn/ver/5301/trunk/htmlunit/LICENSE.txt
+END
+checkstyle_suppressions.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/htmlunit/!svn/ver/5408/trunk/htmlunit/checkstyle_suppressions.xml
+END
+pom.xml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/htmlunit/!svn/ver/5949/trunk/htmlunit/pom.xml
+END
+clover.license
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/htmlunit/!svn/ver/2750/trunk/htmlunit/clover.license
+END
+force.build
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/htmlunit/!svn/ver/5952/trunk/htmlunit/force.build
+END
+checkstyle.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/htmlunit/!svn/ver/5921/trunk/htmlunit/checkstyle.xml
+END

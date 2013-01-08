@@ -1,0 +1,100 @@
+body,table,div {font-family: arial,sans-serif; font-size:12px;}
+table {border:0px}
+a { color: #4183C4; text-decoration: none; }
+hr {border:0px;border-top: solid 1px #E2E2E2;}
+table.top {
+	position: relative; 
+	margin: 32px 0 0 0; 
+	padding: 5px 56px; 
+	background: url(tab_background.gif) 0 0 repeat-x;
+	background-size: 100% auto;
+	border: 1px solid #DDD;
+	font-family:serif; font-size:12px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-bottom-right-radius: 0;
+	-webkit-border-bottom-left-radius: 0;
+	-moz-border-radius-bottomright: 0;
+	-moz-border-radius-bottomleft: 0;
+} 
+div.nav {
+	-webkit-border-bottom-right-radius: 0;
+	-webkit-border-bottom-left-radius: 0;
+	-moz-border-radius-bottomright: 0;
+	-moz-border-radius-bottomleft: 0;
+	border-bottom-right-radius: 0px 0px;
+	border-bottom-left-radius: 0px 0px;
+	position: relative;
+	height: 32px;
+	padding: 1px 20px;
+	background: url(subnav_background.gif) 0 0 repeat-x;
+	background-size: 100%;
+	border: 1px solid #DDD;
+	border-top: 1px solid #FAFAFA;
+	border-bottom: 1px solid #D2D2D2;
+}
+div.txtbox {
+	position: relative;
+	margin-bottom: 16px;
+	color: #333;
+	padding: 10px;
+	background: #FAFAFA;
+	border: 1px solid #DDD;
+	border-top: 1px solid white;
+}
+ul.tabs {
+	-webkit-border-bottom-right-radius: 0;
+	-webkit-border-bottom-left-radius: 0;
+	-moz-border-radius-bottomright: 0;
+	-moz-border-radius-bottomleft: 0;
+	border-bottom: 1px solid #DDD;
+	border-bottom-right-radius: 0px 0px;
+	border-bottom-left-radius: 0px 0px;
+	position: relative;
+	margin: 4px 0 0 0;
+	height: 22px;
+	padding: 0px 0px;
+	border: 0px solid #DDD;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+ul li { list-style-type: none; }
+
+ul li a.selected {
+	position: top;
+	font-weight: bold;
+	color: #333;
+	background: #F8F8F8;
+	border: 1px solid #CCC;
+	border-right-color: #EEE;
+	border-bottom-color: #EEE;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+
+ul li a {
+	position: top;
+	border: 1px solid #EEE;
+	border-right-color: #CCC;
+	border-bottom-color: #CCC;
+	float: left;
+	margin-right: 10px;
+	height: 22px;
+	padding: 0 8px;
+	line-height: 22px;
+	font-size: 12px;
+	color: #666;
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+
+
+input
+{
+	color: #666;
+	background: #fff;
+	border: 1px solid #aaa
+}
+
+pre.prettyprint { border : 0px }

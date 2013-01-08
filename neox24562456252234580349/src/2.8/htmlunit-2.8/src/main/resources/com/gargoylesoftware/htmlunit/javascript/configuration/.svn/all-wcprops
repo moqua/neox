@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/htmlunit/!svn/ver/5955/trunk/htmlunit/src/main/resources/com/gargoylesoftware/htmlunit/javascript/configuration
+END
+IE7.properties
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svnroot/htmlunit/!svn/ver/5876/trunk/htmlunit/src/main/resources/com/gargoylesoftware/htmlunit/javascript/configuration/IE7.properties
+END
+IE8.properties
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svnroot/htmlunit/!svn/ver/5876/trunk/htmlunit/src/main/resources/com/gargoylesoftware/htmlunit/javascript/configuration/IE8.properties
+END
+FF3.properties
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svnroot/htmlunit/!svn/ver/5912/trunk/htmlunit/src/main/resources/com/gargoylesoftware/htmlunit/javascript/configuration/FF3.properties
+END
+JavaScriptConfiguration.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svnroot/htmlunit/!svn/ver/5627/trunk/htmlunit/src/main/resources/com/gargoylesoftware/htmlunit/javascript/configuration/JavaScriptConfiguration.xsd
+END
+FF3.6.properties
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svnroot/htmlunit/!svn/ver/5951/trunk/htmlunit/src/main/resources/com/gargoylesoftware/htmlunit/javascript/configuration/FF3.6.properties
+END
+JavaScriptConfiguration.xml
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svnroot/htmlunit/!svn/ver/5955/trunk/htmlunit/src/main/resources/com/gargoylesoftware/htmlunit/javascript/configuration/JavaScriptConfiguration.xml
+END
+IE6.properties
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svnroot/htmlunit/!svn/ver/5876/trunk/htmlunit/src/main/resources/com/gargoylesoftware/htmlunit/javascript/configuration/IE6.properties
+END

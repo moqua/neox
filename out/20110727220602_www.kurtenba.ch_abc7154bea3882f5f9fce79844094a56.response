@@ -1,0 +1,43 @@
+<html>
+	<head> 
+		<link rel='stylesheet' type='text/css' href='style.css'>
+		<script src="jquery/jquery.min.1.6.2.js"></script>
+		<script src="ajax.js"></script>
+	</head>
+
+	<body>
+		<center>
+		<table width='800'>
+			<tr><td>
+					<table class='top' width='100%'>
+						<tr>
+							<td align=center>
+								<img src='neox.png'></center>
+								<!-- <img src='barcode.png' width='96px' height='96px' align=right> -->
+							</td>
+						</tr>
+					</table>
+					<div class='nav'>
+								<ul class='tabs'>
+									<li><a href='/neox/' class='selected'>Home</a></li>
+									<li><a href=''>About</a></li>
+								</ul>
+					</div>
+					<div class='txtbox'>
+
+						<center>
+							<br><br>Analyze URLs for malicious behaviour.<br><br> 
+							<form action="javascript:insert()"> 
+								<input type="text" id="url" size="64" value="http://www.kurtenba.ch/neox/"> 
+							</form> 
+							<br><br> 
+							<div id="status"></div> 
+						</center>
+						
+						<hr>
+					</div>
+			</td></tr>
+		</table>
+	</center>
+	</body>
+</html>

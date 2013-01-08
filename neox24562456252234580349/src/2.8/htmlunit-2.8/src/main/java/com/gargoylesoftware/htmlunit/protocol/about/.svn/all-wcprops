@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/htmlunit/!svn/ver/5301/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/protocol/about
+END
+AboutURLConnection.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svnroot/htmlunit/!svn/ver/5301/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/protocol/about/AboutURLConnection.java
+END
+Handler.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svnroot/htmlunit/!svn/ver/5301/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/protocol/about/Handler.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svnroot/htmlunit/!svn/ver/1982/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/protocol/about/package.html
+END
