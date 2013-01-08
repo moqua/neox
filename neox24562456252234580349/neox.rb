@@ -48,6 +48,7 @@ include_class 'com.gargoylesoftware.htmlunit.javascript.JavaScriptEngine'
 include_class 'com.gargoylesoftware.htmlunit.ScriptPreProcessor'
 
 include_class 'loggger.CoreJSLoggger'
+include_class 'loggger.CoreJSExceptionLoggger'
 include_class 'loggger.HtmlunitLoggger'
 include_class 'loggger.HtmlunitActiveXLoggger'
 
@@ -193,17 +194,20 @@ puts '###############################################'
 time_diff = Time.now - time_start
 
 
-# javascript elements of page
-js_elements = page.getElementsByTagName("script")
-js_elements.each do |js_element|
-	puts "[+] script:\n"  +js_element.asXml()+ "\n"
-end
-puts '[+] got ' +js_elements.length.to_s+ ' script elements'
+begin
+	# javascript elements of page
+	js_elements = page.getElementsByTagName("script")
+	js_elements.each do |js_element|
+		puts "[+] script:\n"  +js_element.asXml()+ "\n"
+	end
+	puts '[+] got ' +js_elements.length.to_s+ ' script elements'
 
-# iframe elements of page
-iframe_elements = page.getElementsByTagName("iframe")
-iframe_elements.each do |iframe_element|
-	puts "iframe:\n"  +iframe_element.asXml()+ "\n"
+	# iframe elements of page
+	iframe_elements = page.getElementsByTagName("iframe")
+	iframe_elements.each do |iframe_element|
+		puts "iframe:\n"  +iframe_element.asXml()+ "\n"
+	end
+rescue
 end
 
 
@@ -244,8 +248,10 @@ end
 
 
 
-
-puts '[+] got ' +iframe_elements.length.to_s+ ' iframe elements'
+begin
+	puts '[+] got ' +iframe_elements.length.to_s+ ' iframe elements'
+rescue
+end
 
 puts '[+] got ' +$js_exec_count.to_s+ ' javascript executions'
 for script in $js_exec_source:
@@ -290,6 +296,16 @@ corejs_loggg_uniq = corejs_loggg_uniq.uniq
 corejs_loggg_uniq.delete_at(0) # [IdFunctionObject:call, Error]
 corejs_loggg_uniq.delete_at(0) # [IdFunctionObject:call, Object]
 
+# corejs exception loggger
+corejs_exception_loggg_uniq = Array.new()
+corejs_exception_loggger = CoreJSExceptionLoggger.new()
+corejs_exception_loggg = corejs_exception_loggger.popp()
+for x in (0..corejs_exception_loggg.length):
+	if corejs_exception_loggg[x]
+		corejs_exception_loggg_uniq << corejs_exception_loggg[x] 
+	end
+end
+corejs_exception_loggg_uniq = corejs_exception_loggg_uniq.uniq
 
 # htmlunit java loggger
 htmlunit_loggg_uniq = Array.new()
@@ -323,6 +339,10 @@ for x in corejs_loggg_uniq:
 	puts '[corejs_loggger] ' +x.to_s
 end
 
+for x in corejs_exception_loggg_uniq:
+	puts '[corejs_exception_loggger] ' +x.to_s
+end
+
 for x in activex_loggg_uniq:
 	puts '[activeX_logger] ' +x.to_s
 end
@@ -334,6 +354,9 @@ for x in activex_map:
 end
 
 puts "[+] exec time : " +time_diff.to_s+ " sec (js errors: " +$js_exec_errors.length.to_s+ ")"
+for x in $js_exec_errors:
+	puts x.to_s
+end
 
 
 if nohtml == '0':
@@ -357,6 +380,7 @@ html = "
 <style type='text/css'> .hr {color:white; size:1px; width:800px;} </style>
 <style type='text/css'> .code {word-wrap: break-word; word-break: break-all; table-layout:fixed; width:800px; margin:0px; padding:5px} </style>
 <style type='text/css'> .dashed {border: 1px dashed #888888; margin:0px; padding:5px;} </style>
+<style>#page-wrap { width: 780px; margin: 50px auto; padding: 20px; background: white; -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black; }</style>
 <script type='text/javascript' src='toolbox/einars-js-beautify/beautify.js'></script>
 <script type='text/javascript' src='toolbox/google-code-prettify/prettify.js'></script>
 <link href='toolbox/google-code-prettify/prettify.css' type='text/css' rel='stylesheet' />

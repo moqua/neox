@@ -1,4 +1,4 @@
-body,table,div {font-family: arial,sans-serif; font-size:12px;}
+body,table,div {font-family: 'Open Sans',arial,sans-serif; font-size:12px;}
 table {border:0px}
 a { color: #4183C4; text-decoration: none; }
 hr {border:0px;border-top: solid 1px #E2E2E2;}
@@ -7,7 +7,7 @@ table.top {
 	margin: 32px 0 0 0; 
 	padding: 5px 56px; 
 	background: url(tab_background.gif) 0 0 repeat-x;
-	background-size: 100%;
+	background-size: 100% auto;
 	border: 1px solid #DDD;
 	font-family:serif; font-size:12px;
 	-webkit-border-radius: 5px;

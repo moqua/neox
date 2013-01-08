@@ -42,6 +42,12 @@
 
 package org.mozilla.javascript;
 
+// loggger
+import loggger.CoreJSExceptionLoggger;
+import java.util.ArrayList;
+
+
+
 /**
  * Java reflection of JavaScript exceptions.
  * Instances of this class are thrown by the JavaScript 'throw' keyword.
@@ -51,6 +57,12 @@ package org.mozilla.javascript;
 public class JavaScriptException extends RhinoException
 {
     static final long serialVersionUID = -7666130513694669293L;
+
+		// loggger
+		public CoreJSExceptionLoggger loggger = new CoreJSExceptionLoggger();
+		public ArrayList<String> loggg = new ArrayList<String>();
+
+
 
     /**
      * @deprecated
@@ -70,7 +82,14 @@ public class JavaScriptException extends RhinoException
     public JavaScriptException(Object value, String sourceName, int lineNumber)
     {
         recordErrorOrigin(sourceName, lineNumber, null, 0);
-        this.value = value;
+        this.value = value; 
+
+        // loggger
+        loggg.clear();
+        loggg.add("JavaScriptException");
+        loggg.add("Line: "+lineNumber+" "+sourceName);
+        loggger.push(loggg);
+
     }
 
     @Override

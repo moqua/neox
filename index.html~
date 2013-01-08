@@ -1,10 +1,9 @@
 <html>
 	<head> 
 		<link rel='stylesheet' type='text/css' href='style.css'>
-		<link rel='stylesheet' type='text/css' href='jquery.fancybox-1.3.4.css'>
-		<script src="jquery/jquery.min.1.6.2.js"></script>
-		<script src="jquery/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+		<script src="toolbox/jquery/jquery.min.1.6.2.js"></script>
 		<script src="ajax.js"></script>
+		<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css">
 	</head>
 
 	<body>
@@ -22,16 +21,26 @@
 					<div class='nav'>
 								<ul class='tabs'>
 									<li><a href='/neox/' class='selected'>Home</a></li>
-									<li><a href=''>About</a></li>
+									<li><a href='about.html'>About</a></li>
 								</ul>
 					</div>
 					<div class='txtbox'>
 
 						<center>
 							<br><br>Analyze URLs for malicious behaviour.<br><br> 
-							<form action="javascript:insert()"> 
-								<input type="text" id="url" size="64" value="http://www.kurtenba.ch/neox/"> 
+							<form action="javascript:insert()" name="urlform" METHOD=POST> 
+								<input type="hidden" id="foo" name="foo" value="test">
+								<input type="text" id="url" name=url size="64" value="http://www.kurtenba.ch/neox/" onclick="document.urlform.url.value='http://www.kurtenba.ch/neox/';"> 
+								<input type="submit" value="Submit" />
 							</form> 
+							<!--
+							<br><br>
+							<form action="javascript:insert()"> 
+								<textarea type="text" name="url" cols=80 rows=2></textarea>
+								<br>
+								<input type="submit" value="Submit" />
+							</form> 
+							-->
 							<br><br> 
 							<div id="status"></div> 
 						</center>

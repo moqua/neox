@@ -68,3 +68,23 @@ compile core-js:
 use:
 import loggger.*;
 
+
+
+
+
+structure
+
+neox
+	src/2.8/core-js/rhino/src/org/mozilla/javascript/
+		IdFunctionObject.java			CoreJSLoggger
+#		NativeString.java					CoreJSLoggger
+		NativeGlobal.java					CoreJSLoggger
+	src/2.8/htmlunit-2.8/src/main/java/com/gargoylesoftware/htmlunit/javascript/
+		DebugFrameImpl.java				HtmlunitLoggger
+		JavaScriptEngine.java			HtmlunitLoggger
+		host/ActiveXObject.java			HtmlunitActiveXLoggger
+	src/loggger/loggger/
+		CoreJSLoggger.java
+		CoreJSExceptionLoggger.java
+		HtmlunitLoggger.java
+		HtmlunitActiveXLoggger.java

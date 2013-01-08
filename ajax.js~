@@ -1,5 +1,6 @@
 function insert() {
    var url = document.getElementById('url').value;
+   var foo = document.getElementById('foo').value;
    if (url=="") { document.getElementById("status").innerHTML=""; return; } 
    if (window.XMLHttpRequest) xmlhttp=new XMLHttpRequest();
    else  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
@@ -9,7 +10,7 @@ function insert() {
          result();
       }
    }
-   xmlhttp.open("POST","insert.php?url="+escape(url));
+   xmlhttp.open("POST","insert.php?url="+escape(url)+"&foo="+escape(foo));
    xmlhttp.send();
 }
 function result() {
@@ -29,7 +30,7 @@ function result() {
 		url: "result.php?url="+escape(url),
 		data : "url="+escape(url),
 		success: function(html) {
-			 $("#status").html(html).fadeIn(2000);
+			 $("#status").html(html);
 		}
 	});
 

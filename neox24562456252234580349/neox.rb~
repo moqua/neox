@@ -48,6 +48,7 @@ include_class 'com.gargoylesoftware.htmlunit.javascript.JavaScriptEngine'
 include_class 'com.gargoylesoftware.htmlunit.ScriptPreProcessor'
 
 include_class 'loggger.CoreJSLoggger'
+include_class 'loggger.CoreJSExceptionLoggger'
 include_class 'loggger.HtmlunitLoggger'
 include_class 'loggger.HtmlunitActiveXLoggger'
 
@@ -155,6 +156,11 @@ time_start = Time.now
 url_str = "http://localhost/test.html"
 #url_str = 'http://www.kurtenba.ch/malware/sinowal/sinowal.html'
 url_str = ARGV[0]
+begin
+	nohtml = ARGV[1]
+rescue
+	nohtml = '1'
+end
 
 url = URL.new(url_str)
 host = URI.parse(url_str).host
@@ -188,17 +194,20 @@ puts '###############################################'
 time_diff = Time.now - time_start
 
 
-# javascript elements of page
-js_elements = page.getElementsByTagName("script")
-js_elements.each do |js_element|
-	puts "[+] script:\n"  +js_element.asXml()+ "\n"
-end
-puts '[+] got ' +js_elements.length.to_s+ ' script elements'
+begin
+	# javascript elements of page
+	js_elements = page.getElementsByTagName("script")
+	js_elements.each do |js_element|
+		puts "[+] script:\n"  +js_element.asXml()+ "\n"
+	end
+	puts '[+] got ' +js_elements.length.to_s+ ' script elements'
 
-# iframe elements of page
-iframe_elements = page.getElementsByTagName("iframe")
-iframe_elements.each do |iframe_element|
-	puts "iframe:\n"  +iframe_element.asXml()+ "\n"
+	# iframe elements of page
+	iframe_elements = page.getElementsByTagName("iframe")
+	iframe_elements.each do |iframe_element|
+		puts "iframe:\n"  +iframe_element.asXml()+ "\n"
+	end
+rescue
 end
 
 
@@ -239,8 +248,10 @@ end
 
 
 
-
-puts '[+] got ' +iframe_elements.length.to_s+ ' iframe elements'
+begin
+	puts '[+] got ' +iframe_elements.length.to_s+ ' iframe elements'
+rescue
+end
 
 puts '[+] got ' +$js_exec_count.to_s+ ' javascript executions'
 for script in $js_exec_source:
@@ -282,6 +293,19 @@ for x in (0..corejs_loggg.length):
 	end
 end
 corejs_loggg_uniq = corejs_loggg_uniq.uniq
+corejs_loggg_uniq.delete_at(0) # [IdFunctionObject:call, Error]
+corejs_loggg_uniq.delete_at(0) # [IdFunctionObject:call, Object]
+
+# corejs exception loggger
+corejs_exception_loggg_uniq = Array.new()
+corejs_exception_loggger = CoreJSLoggger.new()
+corejs_exception_loggg = corejs_exception_loggger.popp()
+for x in (0..corejs_exception_loggg.length):
+	if corejs_exception_loggg[x]
+		corejs_exception_loggg_uniq << corejs_exception_loggg[x] 
+	end
+end
+corejs_exception_loggg_uniq = corejs_exception_loggg_uniq.uniq
 
 # htmlunit java loggger
 htmlunit_loggg_uniq = Array.new()
@@ -315,10 +339,13 @@ for x in corejs_loggg_uniq:
 	puts '[corejs_loggger] ' +x.to_s
 end
 
+for x in corejs_exception_loggg_uniq:
+	puts '[corejs_exception_loggger] ' +x.to_s
+end
+
 for x in activex_loggg_uniq:
 	puts '[activeX_logger] ' +x.to_s
 end
-puts activex_loggg_uniq.length.to_s
 
 
 activex_map = web_client.getActiveXObjectMap()
@@ -327,8 +354,15 @@ for x in activex_map:
 end
 
 puts "[+] exec time : " +time_diff.to_s+ " sec (js errors: " +$js_exec_errors.length.to_s+ ")"
+for x in $js_exec_errors:
+	puts x.to_s
+end
 
 
+if nohtml == '0':
+	puts '[+] nohtml, exiting'
+	exit
+end
 
 
 #################################################################
@@ -337,32 +371,28 @@ puts "[+] exec time : " +time_diff.to_s+ " sec (js errors: " +$js_exec_errors.le
 
 puts "[+] generating html.."
 
+
 html = "
 <html>
 <head>
-<style type='text/css'> .table {border:1px solid #ffffff; background-color:#888888;} </style>
+<style type='text/css'> .table {border:0px solid #ffffff; background-color:#888888;} </style>
 <style type='text/css'> .table td {font-family:serif; font-size:12px;} </style>
 <style type='text/css'> .hr {color:white; size:1px; width:800px;} </style>
 <style type='text/css'> .code {word-wrap: break-word; word-break: break-all; table-layout:fixed; width:800px; margin:0px; padding:5px} </style>
 <style type='text/css'> .dashed {border: 1px dashed #888888; margin:0px; padding:5px;} </style>
-<script type='text/javascript' src='einars-js-beautify-f614cc4/beautify.js'></script>
-<script type='text/javascript' src='google-code-prettify/src/prettify.js'></script>
-<link href='google-code-prettify/src/prettify.css' type='text/css' rel='stylesheet' />
+<style>#page-wrap { width: 780px; margin: 50px auto; padding: 20px; background: white; -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black; }</style>
+<script type='text/javascript' src='toolbox/einars-js-beautify/beautify.js'></script>
+<script type='text/javascript' src='toolbox/google-code-prettify/prettify.js'></script>
+<link href='toolbox/google-code-prettify/prettify.css' type='text/css' rel='stylesheet' />
+
 </head>
-<body bgcolor='#BBBBBB' onload='prettyPrint()'>
+
+
+<body>
 <center>
-<br><br><br><br>
-<table class='table' width=800px>
-<tr><td>
-<center><br>
-<font color=white size=6>[</font><font size=6>neox (&#x3B1;)</font><font color=white size=6>]</font>
-<br><br></center>
-</td></tr>
-</table>
 <table width=800px>
 <tr>
 <td>
-<br><br>
 "
 html += "<b>Report for: " +list_requests[0][0]+ "</b><br>\n"
 html += "<hr class='hr' align=left><br>\n"
@@ -419,15 +449,17 @@ html += "<br><table class=code>\n"
 
 Dir.chdir 'einars-js-beautify-f614cc4/'
 
-i=0
-html += "<tr><td>"
+i=1
+html += "<tr><td><a name='offset'></a>"
 for item in $js_exec_source
-	html += "<a href='ev_al"+i.to_s+"'>ev_al"+i.to_s+"</a>"
+	html += i.to_s+" <a href='#offset"+i.to_s+"'>javascript eval "+i.to_s+"</a><br>"
 	i+=1
 end
-html += "</td></tr>"
+html += "<br></td></tr>"
+
+i=1
 for script in $js_exec_source:
-	html += "<tr><td bgcolor=#cccccc class=dashed><a name='ev_al"+i.to_s+"'></a><pre class='prettyprint'>" +format_js(script)+ "</pre></td></tr><tr><td height=8px></td></tr>\n"
+	html += "<tr><td><a name='offset"+i.to_s+"'></a>javascript eval "+(i).to_s+"</td></tr><tr><td bgcolor=#ededed class=dashed><pre class='prettyprint'>" +format_js(script)+ "</pre></td></tr><tr><td height=8px>(<a href='#offset'>up</a>)<br><br></td></tr>\n"
 	i+=1
 end
 html += "</table>\n" 
@@ -436,14 +468,14 @@ html += "</table>\n"
 html += "<br><b>JS DOM Objects</b>\n"
 html += "<br><table class=code>\n"
 for js_dom_object in $js_dom_objects:
-	html += "<tr><td bgcolor=#cccccc class=dashed><pre class='prettyprint'><code><b>" +js_dom_object[0]+ "</b> = " +htmlentities(js_dom_object[1])+ "</code></pre></td></tr><tr><td height=8px></td></tr>\n"
+	html += "<tr><td bgcolor=#ededed class=dashed><pre class='prettyprint'><code><b>" +js_dom_object[0]+ "</b> = " +htmlentities(js_dom_object[1])+ "</code></pre></td></tr><tr><td height=8px></td></tr>\n"
 end
 html += "</table>\n" 
 
 html += "<br><b>local function calls</b>\n"
 html += "<br><table class=code>\n"
 for local_call in htmlunit_loggg_uniq:
-	html += "<tr><td bgcolor=#cccccc class=dashed><pre class='prettyprint'><code>" +htmlentities(local_call.to_s)+ "</code></pre></td></tr><tr><td height=8px></td></tr>\n"
+	html += "<tr><td bgcolor=#ededed class=dashed><pre class='prettyprint'><code>" +htmlentities(local_call.to_s)+ "</code></pre></td></tr><tr><td height=8px></td></tr>\n"
 end
 html += "</table>\n" 
 
@@ -451,7 +483,7 @@ html += "</table>\n"
 html += "<br><b>global native calls</b>\n"
 html += "<br><table class=code>\n"
 for global_call in corejs_loggg_uniq:
-	html += "<tr><td bgcolor=#cccccc class=dashed><pre class='prettyprint'><code>" +htmlentities(global_call.to_s)+ "</code></pre></td></tr><tr><td height=8px></td></tr>\n"
+	html += "<tr><td bgcolor=#ededed class=dashed><pre class='prettyprint'><code>" +htmlentities(global_call.to_s)+ "</code></pre></td></tr><tr><td height=8px></td></tr>\n"
 end
 html += "</table>\n" 
 
@@ -462,19 +494,20 @@ Dir.chdir '..'
 html += " </td> </tr>
 </table>
 </center>
-<body>
+<script>prettyPrint()</script>
+</body>
 </html>
 "
 
 # write log
 timestamp = time_start.strftime("%Y%m%d%H%M%S")
 #logfile = File.new('out/'+timestamp+'_'+host+'_'+md5+'.html', 'w')
-logfile = File.new('out/'+timestamp+'_'+host+'_1.html', 'w')
+logfile = File.new('out/'+timestamp+'_'+host+'.html', 'w')
 logfile.write(html)
 logfile.close()
 
 
-puts 'out/'+timestamp+'_'+host+'_1.html'
+puts 'out/'+timestamp+'_'+host+'.html'
 
 
 #################################################################
