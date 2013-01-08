@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svnroot/htmlunit/!svn/ver/1330/trunk/htmlunit/cruise/reporting-app/WEB-INF/classes/net/sourceforge/cruisecontrol/chart
+END
+AbstractCruiseControlChartData.class
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svnroot/htmlunit/!svn/ver/1330/trunk/htmlunit/cruise/reporting-app/WEB-INF/classes/net/sourceforge/cruisecontrol/chart/AbstractCruiseControlChartData.class
+END
+PieChartData.class
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svnroot/htmlunit/!svn/ver/1330/trunk/htmlunit/cruise/reporting-app/WEB-INF/classes/net/sourceforge/cruisecontrol/chart/PieChartData.class
+END
+TimeChartData.class
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svnroot/htmlunit/!svn/ver/1330/trunk/htmlunit/cruise/reporting-app/WEB-INF/classes/net/sourceforge/cruisecontrol/chart/TimeChartData.class
+END

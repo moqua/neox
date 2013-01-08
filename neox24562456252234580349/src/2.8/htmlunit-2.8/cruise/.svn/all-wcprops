@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/htmlunit/!svn/ver/5132/trunk/htmlunit/cruise
+END
+antpublisher.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/htmlunit/!svn/ver/3874/trunk/htmlunit/cruise/antpublisher.xml
+END
+project.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/htmlunit/!svn/ver/5132/trunk/htmlunit/cruise/project.xml
+END
+buildstatus.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/htmlunit/!svn/ver/2006/trunk/htmlunit/cruise/buildstatus.xsl
+END
+cc.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/htmlunit/!svn/ver/3983/trunk/htmlunit/cruise/cc.xsl
+END
+htmlmail.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/htmlunit/!svn/ver/2006/trunk/htmlunit/cruise/htmlmail.xsl
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/htmlunit/!svn/ver/3874/trunk/htmlunit/cruise/build.xml
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/htmlunit/!svn/ver/5724/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/ssl
+END
+InsecureSSLProtocolSocketFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svnroot/htmlunit/!svn/ver/5724/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/ssl/InsecureSSLProtocolSocketFactory.java
+END
+InsecureTrustManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/htmlunit/!svn/ver/5301/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/ssl/InsecureTrustManager.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/htmlunit/!svn/ver/1982/trunk/htmlunit/src/main/java/com/gargoylesoftware/htmlunit/ssl/package.html
+END

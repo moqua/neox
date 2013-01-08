@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/htmlunit/!svn/ver/5312/trunk/htmlunit/hudson
+END
+job-config-only-libs.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/htmlunit/!svn/ver/5312/trunk/htmlunit/hudson/job-config-only-libs.xml
+END
+job-config-without-libs.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/htmlunit/!svn/ver/5312/trunk/htmlunit/hudson/job-config-without-libs.xml
+END
+readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/htmlunit/!svn/ver/5296/trunk/htmlunit/hudson/readme.txt
+END

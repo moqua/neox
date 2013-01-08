@@ -1,0 +1,57 @@
+<html>
+<head>
+<script type="text/javascript">
+function insertItem() {
+	var url = document.getElementById('url').value;
+	if (url=="") {
+		document.getElementById("status").innerHTML="";
+		return;
+	} 
+	// make xml object, code for IE7+, Firefox, Chrome, Opera, Safari
+	if (window.XMLHttpRequest) xmlhttp=new XMLHttpRequest();
+
+	// code for IE6, IE5
+	else  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+
+	// if http response code == 200 -> set status
+	xmlhttp.onreadystatechange=function() {
+		if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+			document.getElementById("status").innerHTML=xmlhttp.responseText;
+			fetchResult();
+		}
+	}
+	// do xml query
+	xmlhttp.open("POST","ajaxinsert.php?url="+escape(url));
+	xmlhttp.send();
+}
+function fetchResult() {
+	var url = document.getElementById('url').value;
+	if (window.XMLHttpRequest) xmlhttp=new XMLHttpRequest();
+	else	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	xmlhttp.onreadystatechange=function() {
+		if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+			document.getElementById("status").innerHTML=xmlhttp.responseText;
+		}
+	}
+	xmlhttp.open("POST","ajaxresult.php?url="+escape(url));
+	xmlhttp.send();
+}
+</script>
+</head>
+
+<body>
+<center>
+<br><br><img src='barcode.png'><br><br><br>
+
+
+<!-- query -->
+<form action="javascript:insertItem()">
+Enter URL: <input type="text" id="url">
+</form>
+
+<!-- result -->
+<div id="status"> </div>
+
+</center>
+</body>
+</html>
