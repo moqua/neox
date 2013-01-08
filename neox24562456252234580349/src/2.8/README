@@ -1,2 +1,0 @@
-svn -r 1780 co https://htmlunit.svn.sourceforge.net/svnroot/htmlunit/trunk/htmlunit/ htmlunit
-svn -r'{20100805}' co https://htmlunit.svn.sourceforge.net/svnroot/htmlunit/trunk/core-js/ core-js
